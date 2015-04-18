@@ -1,7 +1,9 @@
 <?php
 namespace Amqp\Base\Builder;
 
-class Queue extends Base
+use Amqp\Base\Builder\Interfaces\Component;
+
+class Queue extends Base implements Component
 {
     /**
      * @var array
@@ -30,7 +32,7 @@ class Queue extends Base
         $this->channelBuilder = $channelBuilder;
     }
 
-    public function get($queueName, \AMQPChannel $channel)
+    public function get($queueName)
     {
         if (isset($this->queues[$queueName])) {
             // check if connection is still opened

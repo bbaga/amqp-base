@@ -1,7 +1,9 @@
 <?php
 namespace Amqp\Base\Builder;
 
-class Channel
+use Amqp\Base\Builder\Interfaces\Component;
+
+class Channel implements Component
 {
     /**
      * @var array

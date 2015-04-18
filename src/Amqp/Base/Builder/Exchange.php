@@ -1,9 +1,10 @@
 <?php
 namespace Amqp\Base\Builder;
 
+use Amqp\Base\Builder\Interfaces\Component;
 use Symfony\Component\Config\Definition\Exception\Exception;
 
-class Exchange extends Base
+class Exchange extends Base implements Component
 {
     /**
      * @var array
@@ -75,9 +76,8 @@ class Exchange extends Base
     }
 
     /**
-     * @param string $channelName   The channel on which the current exchange will be declared
-     * @param array $localConfiguration  The configuration for the current exchange
-     * @param bool  $checkDeclared  Will check if the exchange is already declared
+     * @param string $channelName  The channel on which the current exchange will be declared
+     * @param array $configuration The configuration for the current exchange
      *
      * @return \AMQPExchange
      *
