@@ -1,6 +1,7 @@
 # amqp-base
 
 [![readthedocs](https://readthedocs.org/projects/amqp-base/badge/?version=latest)](http://amqp-base.readthedocs.org/en/latest/README/)
+[![travis ci](https://api.travis-ci.org/c-datculescu/amqp-base.svg)](https://travis-ci.org/c-datculescu/amqp-base)
 
 c-datculescu/amqp-base is a small library designed to interact and abstract operating a AMQP 0.9.1 compatible broker
 
