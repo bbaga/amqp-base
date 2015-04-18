@@ -82,4 +82,10 @@ Queue/Exchange names can be declared in multiple ways:
 * static - simple string (example: test-queue-1)
 * function call - the name of the queue/exchange is retrieved by calling a function, useful when implementing certain patterns that depend for example on the hostname
 * static method call - same as function, except it is a static method call
-* dynaic method call - same as function, except it is a dynamic method call
+* dynamic method call - same as function, except it is a dynamic method call
+
+# Authors
+
+Vitaliy Stepanyuk <vstepanuyk@gmail.com>
+
+Cristian Datculescu <cristian.datculescu@gmail.com>
