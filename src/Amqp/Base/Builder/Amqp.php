@@ -77,13 +77,7 @@ class Amqp implements Interfaces\Amqp
      */
     public function channel($channelName)
     {
-        $connectionName = $this->amqpConfiguration['channel'][$channelName]['connection'];
-        // return the
-        $channel = $this->channelBuilder->get(
-            $channelName,
-            $this->connectionBuilder->get($connectionName)
-        );
-
+        $channel = $this->channelBuilder->get($channelName);
         return $channel;
     }
 
@@ -100,12 +94,7 @@ class Amqp implements Interfaces\Amqp
             $this->checkDependencies($queueName, 'queue', $configuration['dependencies']);
         }
 
-        $channelName = $this->amqpConfiguration['queue'][$queueName]['channel'];
-
-        $queue = $this->queueBuilder->get(
-            $queueName,
-            $this->channelBuilder->get($channelName)
-        );
+        $queue = $this->queueBuilder->get($queueName);
 
         if ($needDependencies == true) {
             $this->decreaseRefcount($queueName, 'queue');
@@ -126,13 +115,7 @@ class Amqp implements Interfaces\Amqp
             $needDependencies = true;
             $this->checkDependencies($exchangeName, 'exchange', $configuration['dependencies']);
         }
-
-        $channelName = $configuration['channel'];
-        $exchange = $this->exchangeBuilder->get(
-            $exchangeName,
-            $this->channelBuilder->get($channelName)
-        );
-
+        
         if ($needDependencies == true) {
             $this->decreaseRefcount($exchangeName, 'exchange');
         }
