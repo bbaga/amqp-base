@@ -46,11 +46,11 @@ In the case of publishers, there are two types of publishers offered:
 
 A few properties are implemented on top of consumers:
 
-* Monitors - these are special objects that are designed to detect certain conditions and stop the consumer all together:
+* **Monitors** - these are special objects that are designed to detect certain conditions and stop the consumer all together:
   
-  - FileChange monitor - monitors a file for changes in the mtime. Useful when new deploys happen. If given the choice, a combo of supervisord and monit is preferable
-  - Memory monitor - monitors the memory currently consumed by the listener. Since php long running apps tend to leak at least some memory, it is useful to stop the listener when the limit is reached
-  - MessageCounter - stops the listener after <x> messages.
+  - **FileChange monitor** - monitors a file for changes in the mtime. Useful when new deploys happen. If given the choice, a combo of supervisord and monit is preferable
+  - **Memory monitor** - monitors the memory currently consumed by the listener. Since php long running apps tend to leak at least some memory, it is useful to stop the listener when the limit is reached
+  - **MessageCounter** - stops the listener after <x> messages.
 * The simple consumer can do multi-ack, ack messages only after <x> amount of messages. This increases the performance of the delivery.
 
 The rpc publisher allows for setting a timeout in which the operation is marked as failed.
