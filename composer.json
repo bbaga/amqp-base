@@ -21,7 +21,9 @@
         "symfony/config": "2.6.*"
     },
     "require-dev": {
-        "symfony/dependency-injection": "2.6.*"
+        "symfony/dependency-injection": "2.6.*",
+        "pdezwart/php-amqp":            "dev-master",
+        "ext-amqp":                     ">=1.4.0"
     },
     "autoload": {
         "psr-0": {
