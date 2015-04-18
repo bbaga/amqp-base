@@ -9,10 +9,6 @@
 namespace Amqp\Base\Builder;
 
 use Amqp\Base\Config\Processor;
-use \AMQPConnection,
-    \AMQPChannel,
-    \AMQPQueue,
-    \AMQPExchange;
 
 class Amqp implements Interfaces\Amqp
 {

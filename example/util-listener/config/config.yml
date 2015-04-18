@@ -4,16 +4,16 @@
 # for more informations please look at config/config_doc.yml, all configuration values are present there
 amqp:
   baseConnection:
-    live: &baseLive {host: [localhost], port:5672, login:guest, password:guest, vhost:/}
+    live: &baseLive {}
 
   baseChannel:
     base: &baseChannQOS {count: 100, connection: live}
 
   baseExchange:
-    base: &baseExchDurable {flags: [AMQP_DURABLE], channel: live}
+    base: &baseExchDurable {channel: live}
 
   baseQueue:
-    base: &baseQueueDurable {flags: [AMQP_DURABLE], channel: live}
+    base: &baseQueueDurable {channel: live}
 
   connection:
     live:
@@ -26,13 +26,12 @@ amqp:
   exchange:
     testExchange:
       <<:                   *baseExchDurable
-      name:                 {name: test-exchange, type: constant}
-      type:                 AMQP_EX_TYPE_TOPIC
+      name:                 {name: test-exchange}
 
   queue:
     testQueue:
       <<:                   *baseQueueDurable
-      name:                 {name: test-queue, type: constant}
+      name:                 {name: test-queue}
       dependencies:
         exchange:
           - testExchange
@@ -42,7 +41,7 @@ amqp:
             routingKey: example.test
     dateTimeQueue:
       <<:                   *baseQueueDurable
-      name:                 {name: date-queue, type: constant}
+      name:                 {name: date-queue}
       dependencies:
         exchange:
           - testExchange

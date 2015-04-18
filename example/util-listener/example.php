@@ -26,6 +26,5 @@ $loader->load('services.yml');
 $container->setParameter('config_path', __DIR__ . '/config');
 
 $listener = $container->get('listener.test');
-//$listener = $container->get('listener.dateTime');
 
 $listener->listen();

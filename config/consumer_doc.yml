@@ -26,8 +26,5 @@ listener:
         # message. Generally this means that the configuration is not done right
         crit_not_implemented:       error
 
-      # if on processing we get an error, how many times we will requeue the message before not requeing it anymore
-      maxRequeue:           3
-
       # bulk ack: the messages will only be acknowledged when the bulkack number has been hit
       bulkAck:              50
