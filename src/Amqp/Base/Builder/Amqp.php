@@ -115,6 +115,8 @@ class Amqp implements Interfaces\Amqp
             $needDependencies = true;
             $this->checkDependencies($exchangeName, 'exchange', $configuration['dependencies']);
         }
+
+        $exchange = $this->exchangeBuilder->get($exchangeName);
         
         if ($needDependencies == true) {
             $this->decreaseRefcount($exchangeName, 'exchange');
